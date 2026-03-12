@@ -7,7 +7,7 @@ export class DieAstra extends Die {
     /* -------------------------------------------- */
 
     /** @override */
-    static DENOMINATION = "s";
+    static DENOMINATION = "a";
 
     /** @override */
     get total(){

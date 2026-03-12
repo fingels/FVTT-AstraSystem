@@ -1,7 +1,7 @@
 {
 	"id": "astra-system",
 	"title": "Astra System Dice Roller",
-	"description": "Adds the ability to roll a Star Die",
+	"description": "Adds the ability to roll an Astra Die",
 	"version": "1.0",
 	"compatibility": {
 		"minimum": "11",
@@ -26,5 +26,5 @@
 	],
 	"url": "https://github.com/fingels/FVTT-AstraSystem",
 	"manifest": "https://raw.githubusercontent.com/fingels/FVTT-AstraSystem/master/module.json",
-	"download": "https://raw.githubusercontent.com/fingels/FVTT-AstraSystem/master/fvtt-astra.zip"
+	"download": "https://raw.githubusercontent.com/fingels/FVTT-AstraSystem/master/astra-system.rar"
 }
