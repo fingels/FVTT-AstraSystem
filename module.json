@@ -1,18 +1,15 @@
 {
-	"id": "szimfonia-dice-roller",
-	"title": "Szimfonia Dice Roller",
-	"description": "Adds the ability to roll a Szimfonia die",
-	"version": "1.1.0",
+	"id": "astra-system",
+	"title": "Astra System Dice Roller",
+	"description": "Adds the ability to roll a Star Die",
+	"version": "1.0",
 	"compatibility": {
 		"minimum": "11",
 		"verified": "13.350"
 	},
 	"authors": [
 		{
-			"name": "JDW"
-		},
-		{
-			"name": "Jonny"
+			"name": "Florian Ingels"
 		}
 	],
 	"relationships": [
@@ -22,12 +19,12 @@
 		}
 	],
 	"esmodules": [
-		"./modules/szimfonia.js"
+		"./modules/astra.js"
 	],
 	"styles": [
-		"./css/szimfonia.css"
+		"./css/astra.css"
 	],
-	"url": "https://github.com/JiDW/FVTT-Szimfonia",
-	"manifest": "https://raw.githubusercontent.com/JiDW/FVTT-Szimfonia/master/module.json",
-	"download": "https://raw.githubusercontent.com/JiDW/FVTT-Szimfonia/master/fvtt-szimfonia.zip"
+	"url": "https://github.com/fingels/FVTT-AstraSystem",
+	"manifest": "https://raw.githubusercontent.com/fingels/FVTT-AstraSystem/master/module.json",
+	"download": "https://raw.githubusercontent.com/fingels/FVTT-AstraSystem/master/fvtt-astra.zip"
 }
