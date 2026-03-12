@@ -1,8 +1,8 @@
 import {DiceSystem} from '../../dice-so-nice/api.js';
-import {DieSzimfonia} from './die.js';
+import {DieAstra} from './die.js';
 
 Hooks.once("init", async function () {
-    CONFIG.Dice.terms["s"] = DieSzimfonia;
+    CONFIG.Dice.terms["a"] = DieAstra;
 });
 
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
@@ -14,7 +14,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
         let szRoll = false;
         message.rolls.forEach(roll => {
             roll.dice.forEach(dice => {
-                if(dice instanceof DieSzimfonia){
+                if(dice instanceof DieAstra){
                     szRoll = true;
                     dice.results.forEach(res => {
                         switch(res.result){
@@ -41,7 +41,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
                 }
             });
         });
-        
+
         if(szRoll){
             ChatMessage.create({
                 content: `<b>Defense:</b> ${defense}<br><b>Success:</b> ${success}<br><b>Focus:</b> ${focus}`,
@@ -53,26 +53,26 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
 });
 
 Hooks.once('diceSoNiceReady', (dice3d) => {
-    const system = new DiceSystem("szimfonia", "Szimfonia", "default");
+    const system = new DiceSystem("astra", "Astra", "default");
     dice3d.addSystem(system);
     dice3d.addDicePreset({
       type:"ds",
       labels:[
-        'modules/szimfonia-dice-roller/images/S1.png', 
-        'modules/szimfonia-dice-roller/images/S2.png', 
-        'modules/szimfonia-dice-roller/images/F1.png',
-		'modules/szimfonia-dice-roller/images/F2.png', 
-        'modules/szimfonia-dice-roller/images/D1_bg.png', 		
-        'modules/szimfonia-dice-roller/images/D1_bg.png'
+        'modules/astra-system/images/S1.png',
+        'modules/astra-system/images/S2.png',
+        'modules/astra-system/images/F1.png',
+		'modules/astra-system/images/F2.png',
+        'modules/astra-system/images/D1_bg.png',
+        'modules/astra-system/images/D1_bg.png'
       ],
       bumpMaps:[
-        'modules/szimfonia-dice-roller/images/S1_bump.png', 
-        'modules/szimfonia-dice-roller/images/S2_bump.png', 
-        'modules/szimfonia-dice-roller/images/F1_bump.png',
-        'modules/szimfonia-dice-roller/images/F2_bump.png',		
-        'modules/szimfonia-dice-roller/images/D1_bump.png',
-		'modules/szimfonia-dice-roller/images/D1_bump.png'
+        'modules/astra-system/images/S1_bump.png',
+        'modules/astra-system/images/S2_bump.png',
+        'modules/astra-system/images/F1_bump.png',
+        'modules/astra-system/images/F2_bump.png',
+        'modules/astra-system/images/D1_bump.png',
+		'modules/astra-system/images/D1_bump.png'
       ],
-      system:"szimfonia"
+      system:"astra"
     });
 });
