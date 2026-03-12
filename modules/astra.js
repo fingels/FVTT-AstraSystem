@@ -34,7 +34,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
                                 break;
                         }
                     });
-                    sucess = Math.floor(sucess/2.0)
+                    sucess = Math.floor(sucess/2.0);
                 }
             });
         });
