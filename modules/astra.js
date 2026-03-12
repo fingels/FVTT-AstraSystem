@@ -56,7 +56,7 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     const system = new DiceSystem("astra", "Astra", "default");
     dice3d.addSystem(system);
     dice3d.addDicePreset({
-      type:"ds",
+      type:"da",
       labels:[
         'modules/astra-system/images/S1.png',
         'modules/astra-system/images/S2.png',
