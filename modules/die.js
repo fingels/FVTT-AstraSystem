@@ -19,12 +19,12 @@ export class DieAstra extends Die {
     /** @override */
     getResultLabel(result) {
         return {
-			"1": '<img src="modules/astra-system/images/S1_inCHAT.png" />',
-            "2": '<img src="modules/astra-system/images/S2_inCHAT.png" />',
-            "3": '<img src="modules/astra-system/images/F1_inCHAT.png" />',
-            "4": '<img src="modules/astra-system/images/F2_inCHAT.png" />',
-			"5": '<img src="modules/astra-system/images/D1_inCHAT.png" />',
-            "6": '<img src="modules/astra-system/images/D1_inCHAT.png" />'
+			"1": '<img src="modules/astra-system/images/empty.png" />',
+            "2": '<img src="modules/astra-system/images/empty.png" />',
+            "3": '<img src="modules/astra-system/images/HalfStar.png" />',
+            "4": '<img src="modules/astra-system/images/HalfStar.png" />',
+			"5": '<img src="modules/astra-system/images/Star.png" />',
+            "6": '<img src="modules/astra-system/images/Star.png" />'
         }[result.result];
     }
 }

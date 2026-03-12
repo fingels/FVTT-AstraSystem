@@ -8,43 +8,40 @@ Hooks.once("init", async function () {
 Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
     let message = game.messages.get(chatMessageID);
     if(message.isAuthor){
-        let defense = 0;
-        let focus = 0;
         let success = 0;
-        let szRoll = false;
+        let astraRoll = false;
         message.rolls.forEach(roll => {
             roll.dice.forEach(dice => {
                 if(dice instanceof DieAstra){
-                    szRoll = true;
+                    astraRoll = true;
                     dice.results.forEach(res => {
                         switch(res.result){
                             case 5:
-                                defense++;
-                                break;
-                            case 4:
-                                focus+=2;
-                                break;
-                            case 1:
-                                success++;
-                                break;
-                            case 2:
                                 success+=2;
                                 break;
+                            case 4:
+                                sucess++;
+                                break;
+                            case 1:
+                                break;
+                            case 2:
+                                break;
                             case 3:
-                                focus++;
+                                sucess++;
                                 break;
                             case 6:
-                                defense++;
+                                success+=2;
                                 break;
                         }
                     });
+                    sucess = Math.floor(sucess/2.0)
                 }
             });
         });
 
-        if(szRoll){
+        if(astraRoll){
             ChatMessage.create({
-                content: `<b>Defense:</b> ${defense}<br><b>Success:</b> ${success}<br><b>Focus:</b> ${focus}`,
+                content: `<b>Success:</b> ${success}<br>`,
                 author: message.author,
                 blind: message.blind
             });
@@ -58,20 +55,20 @@ Hooks.once('diceSoNiceReady', (dice3d) => {
     dice3d.addDicePreset({
       type:"da",
       labels:[
-        'modules/astra-system/images/S1.png',
-        'modules/astra-system/images/S2.png',
-        'modules/astra-system/images/F1.png',
-		'modules/astra-system/images/F2.png',
-        'modules/astra-system/images/D1_bg.png',
-        'modules/astra-system/images/D1_bg.png'
+        'modules/astra-system/images/empty_bg.png',
+        'modules/astra-system/images/empty_bg.png',
+        'modules/astra-system/images/HalfStar_bg.png',
+		'modules/astra-system/images/HalfStar_bg.png',
+        'modules/astra-system/images/Star_bg.png',
+        'modules/astra-system/images/Star_bg.png'
       ],
       bumpMaps:[
-        'modules/astra-system/images/S1_bump.png',
-        'modules/astra-system/images/S2_bump.png',
-        'modules/astra-system/images/F1_bump.png',
-        'modules/astra-system/images/F2_bump.png',
-        'modules/astra-system/images/D1_bump.png',
-		'modules/astra-system/images/D1_bump.png'
+        'modules/astra-system/images/empty.png',
+        'modules/astra-system/images/empty.png',
+        'modules/astra-system/images/HalfStar.png',
+        'modules/astra-system/images/HalfStar.png',
+        'modules/astra-system/images/Star.png',
+		'modules/astra-system/images/Star.png'
       ],
       system:"astra"
     });
