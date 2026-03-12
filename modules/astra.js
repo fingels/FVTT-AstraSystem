@@ -20,14 +20,14 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
                                 success+=2;
                                 break;
                             case 4:
-                                sucess++;
+                                success++;
                                 break;
                             case 1:
                                 break;
                             case 2:
                                 break;
                             case 3:
-                                sucess++;
+                                success++;
                                 break;
                             case 6:
                                 success+=2;
@@ -38,7 +38,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
             });
         });
 
-        sucess = Math.floor(sucess/2.0);
+        success = Math.floor(success/2.0);
 
         if(astraRoll){
             ChatMessage.create({
