@@ -9,6 +9,8 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
     let message = game.messages.get(chatMessageID);
     if(message.isAuthor){
         let success = 0;
+        let advantage =0;
+        let disadvantage =0;
         let astraRoll = false;
         message.rolls.forEach(roll => {
             roll.dice.forEach(dice => {
@@ -17,10 +19,13 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
                     dice.results.forEach(res => {
                         switch(res.result){
                             case 5:
+                                advantage++;
+                                disadvantage++;
                                 success+=2;
                                 break;
                             case 4:
                                 success++;
+                                advantage++;
                                 break;
                             case 1:
                                 break;
@@ -28,8 +33,11 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
                                 break;
                             case 3:
                                 success++;
+                                advantage++;
                                 break;
                             case 6:
+                                advantage++;
+                                disadvantage++;
                                 success+=2;
                                 break;
                         }
@@ -42,7 +50,7 @@ Hooks.on('diceSoNiceRollComplete', (chatMessageID) => {
 
         if(astraRoll){
             ChatMessage.create({
-                content: `<b>Success:</b> ${success}<br>`,
+                content: `<b>Success:</b> ${success}<br><b>With Advantage:</b> ${advantage}<br><b>With Disadvantage:</b> ${disadvantage}<br>`,
                 author: message.author,
                 blind: message.blind
             });
